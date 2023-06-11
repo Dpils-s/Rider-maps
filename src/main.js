@@ -5,6 +5,7 @@ import CustomerAddress from "@/components/CustomerAddress.vue";
 import AddressList from "@/components/AddressList.vue";
 import RiderRoute from "@/components/RiderRoute.vue";
 import MainPage from "@/components/MainPage.vue";
+import HelloWorld from "@/components/HelloWorld.vue";
 
 // Import your components and createRouter
 
@@ -13,6 +14,7 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/', component: MainPage },
+        { path: '/hello-world', component: HelloWorld },
         { path: '/address-selection', component: CustomerAddress },
         { path: '/address-list', component: AddressList },
         { path: '/rider-route', component: RiderRoute },
