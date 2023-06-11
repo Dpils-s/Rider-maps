@@ -34,5 +34,5 @@ jobs:
       run: |
         docker tag artjomf/maps artjomf/maps:${{ github.sha }}
         docker push artjomf/maps:${{ github.sha }}
-        docker tag artjomf/maps artjomf/maps
+        docker tag artjomf/maps:${{ github.sha }} artjomf/maps:latest
         docker push artjomf/maps
