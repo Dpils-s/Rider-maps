@@ -22,7 +22,7 @@ jobs:
       run: npm ci
 
     - name: Build Docker image
-      run: docker build -t artjomf/maps .
+      run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/maps .
 
     - name: Login to Docker Hub
       uses: docker/login-action@v1
@@ -32,7 +32,7 @@ jobs:
 
     - name: Push Docker image
       run: |
-        docker tag artjomf/maps artjomf/maps:${{ github.sha }}
-        docker push artjomf/maps:${{ github.sha }}
-        docker tag artjomf/maps:${{ github.sha }} artjomf/maps:latest
-        docker push artjomf/maps
+        docker tag ${{ secrets.DOCKER_HUB_USERNAME }}/maps artjomf/maps:${{ github.sha }}
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/maps:${{ github.sha }}
+        docker tag ${{ secrets.DOCKER_HUB_USERNAME }}/maps:${{ github.sha }} artjomf/maps:latest
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/maps:latest
