@@ -1,4 +1,4 @@
-class AddressDTO {
+export class AddressDTO {
     constructor(id, place, description) {
         this.id = id;
         this.place = place;
@@ -6,7 +6,7 @@ class AddressDTO {
     }
 }
 
-class PlaceDTO {
+export class PlaceDTO {
     constructor(addressComponents, geometry, name) {
         this.addressComponents = addressComponents;
         this.geometry = geometry;
@@ -14,21 +14,21 @@ class PlaceDTO {
     }
 }
 
-class GeometryDTO {
+export class GeometryDTO {
     constructor(location, viewport) {
         this.location = location;
         this.viewport = viewport;
     }
 }
 
-class LocationDTO {
+export class LocationDTO {
     constructor(lat, lng) {
         this.lat = lat;
         this.lng = lng;
     }
 }
 
-class ViewportDTO {
+export class ViewportDTO {
     constructor(south, west, north, east) {
         this.south = south;
         this.west = west;
@@ -37,12 +37,10 @@ class ViewportDTO {
     }
 }
 
-class AddressComponentDTO {
+export class AddressComponentDTO {
     constructor(longName, shortName, types) {
         this.longName = longName;
         this.shortName = shortName;
         this.types = types;
     }
 }
-
-export {AddressDTO, PlaceDTO, GeometryDTO, LocationDTO, ViewportDTO, AddressComponentDTO}
