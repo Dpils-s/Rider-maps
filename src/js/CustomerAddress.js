@@ -1,11 +1,12 @@
 /* global google */
 
 import {Loader} from "@googlemaps/js-api-loader";
-
+import {getKeyString} from "@/DAL/KeyDAL";
+const KEY = await getKeyString();
 let position;
 
 const loader = new Loader({
-    apiKey: 'AIzaSyCKoPmcyA19rfq0dT8CiMOHkkLYYamEsp8',
+    apiKey: KEY,
     version: 'weekly',
     libraries: ['places'],
 });
@@ -20,7 +21,7 @@ function initMap() {
     const CONFIGURATION = {
         "ctaTitle": "Save",
         "mapOptions": {"center":{"lat":51.43990423697764,"lng":5.477415699040112},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":true,"zoom":14,"zoomControl":true,"maxZoom":22,"mapId":""},
-        "mapsApiKey": "AIzaSyCKoPmcyA19rfq0dT8CiMOHkkLYYamEsp8", // Replace with your Google Maps API key
+        "mapsApiKey": KEY, // Replace with your Google Maps API key
         "capabilities": {"addressAutocompleteControl":true,"mapDisplayControl":true,"ctaControl":true}
     };
 

@@ -1,11 +1,11 @@
-import { AddressDTO, PlaceDTO, GeometryDTO, LocationDTO, ViewportDTO, AddressComponentDTO } from '@/DTO/AddressDTO'; // Import the DTO classes
+import {AddressComponentDTO, AddressDTO, GeometryDTO, LocationDTO, PlaceDTO, ViewportDTO} from '@/DTO/AddressDTO'; // Import the DTO classes
 
 async function getAllAddresses() {
     try {
         const response = await fetch('http://localhost:4080/places');
         const data = await response.json();
 
-        const addresses = data.map(item => {
+        return data.map(item => {
             const location = new LocationDTO(item.place.geometry.location.lat, item.place.geometry.location.lng);
             const viewport = new ViewportDTO(
                 item.place.geometry.viewport.south,
@@ -24,8 +24,6 @@ async function getAllAddresses() {
 
             return new AddressDTO(item._id.$oid, place, item.description);
         });
-
-        return addresses;
     } catch (error) {
         console.error('Error:', error);
         return []; // Return an empty array in case of an error
