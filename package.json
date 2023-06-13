@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/cli-plugin-unit-jest": "^5.0.8",
+    "@vue/test-utils": "^2.3.2",
     "core-js": "^3.8.3",
     "dotenv": "^16.1.4",
     "eslint-plugin-googlemaps": "^1.4.15",

@@ -7,9 +7,6 @@ export default {
     custAddress() {
       this.$router.push('/address-selection');
     },
-    helloWorld(){
-      this.$router.push('/hello-world');
-    }
   }
 }
 </script>
@@ -20,7 +17,6 @@ export default {
       <li>
         <button @click="addressList()">Address List</button>
         <button @click="custAddress()">Address selection</button>
-        <button @click="helloWorld()">Hello World</button>
       </li>
     </ul>
   </div>
