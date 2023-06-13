@@ -1,11 +1,4 @@
-import {
-    AddressDTO,
-    PlaceDTO,
-    GeometryDTO,
-    LocationDTO,
-    ViewportDTO,
-    AddressComponentDTO,
-} from '@/DTO/AddressDTO';
+import {AddressDTO, AddressComponentDTO, ViewportDTO, PlaceDTO, LocationDTO, GeometryDTO} from "../src/DTO/AddressDTO";
 
 describe('AddressDTO', () => {
     it('should initialize with correct values', () => {
