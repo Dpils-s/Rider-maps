@@ -9,7 +9,6 @@
     "test": "npx jest"
   },
   "dependencies": {
-    "@googlemaps/js-api-loader": "^1.16.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "axios": "^1.4.0",
     "axios-mock-adapter": "^1.21.4",
@@ -26,6 +25,7 @@
     "@babel/core": "^7.22.5",
     "@babel/eslint-parser": "^7.12.16",
     "@babel/preset-env": "^7.22.5",
+    "@googlemaps/js-api-loader": "^1.16.1",
     "@vue/babel-preset-jsx": "^1.4.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
