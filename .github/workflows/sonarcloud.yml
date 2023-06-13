@@ -26,10 +26,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and test
-        run: npm run build && npm run test
+      - name: Build
+        run: npm run build
 
-      - name: test coverage
+      - name: Test coverage
         run: npm run test:coverage
 
       - name: SonarCloud Scan
