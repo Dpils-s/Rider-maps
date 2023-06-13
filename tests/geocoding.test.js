@@ -1,35 +1,46 @@
-import {geocode} from "./modules/geocoding";
+import { geocode } from './modules/geocoding';
 import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
 
-describe('Geocoding', () => {
-    const mock = new MockAdapter(axios);
+jest.mock('axios');
 
-    it('should return the correct coordinates for a given address', async () => {
-        const address = '1600 Amphitheatre Parkway, Mountain View, CA';
-
-        mock
-            .onGet('https://maps.googleapis.com/maps/api/geocode/json', {
-                params: {
-                    address: address,
-                    key: process.env.API_KEY,
-                },
-            })
-            .reply(200, {
+describe('geocode', () => {
+    it('should geocode an address', async () => {
+        const mockResponse = {
+            data: {
                 results: [
                     {
                         geometry: {
                             location: {
-                                lat: 37.4224764,
-                                lng: -122.0842499,
+                                lat: 123,
+                                lng: 456,
                             },
                         },
                     },
                 ],
-            });
+            },
+        };
 
-        const coordinates = await geocode(address);
+        axios.get.mockResolvedValue(mockResponse);
 
-        expect(coordinates).toEqual({ lat: 37.4224764, lng: -122.0842499 });
+        const address = 'New York, USA';
+        const result = await geocode(address);
+
+        expect(result).toEqual({ lat: 123, lng: 456 });
+        expect(axios.get).toHaveBeenCalledWith('https://maps.googleapis.com/maps/api/geocode/json', {
+            params: {
+                address: address,
+                key: process.env.API_KEY,
+            },
+        });
+    });
+
+    it('should return null on Geocoding API error', async () => {
+        const mockError = new Error('API error');
+        axios.get.mockRejectedValue(mockError);
+
+        const address = 'Invalid address';
+        const result = await geocode(address);
+
+        expect(result).toBeNull();
     });
 });
