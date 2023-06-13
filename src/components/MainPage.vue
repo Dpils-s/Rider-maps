@@ -25,7 +25,3 @@ export default {
     </ul>
   </div>
 </template>
-
-<style scoped>
-
-</style>
