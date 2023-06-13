@@ -1,8 +1,7 @@
 /* global google */
 
 import { Loader } from '@googlemaps/js-api-loader';
-import {getKeyString} from "@/DAL/KeyDAL";
-const KEY = await getKeyString();
+const KEY = process.env.VUE_APP_API_KEY;
 
 const loader = new Loader({
     apiKey: KEY,
