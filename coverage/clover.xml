@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686651991264" clover="3.2.0">
-  <project timestamp="1686651991264" name="All files">
+<coverage generated="1686652335587" clover="3.2.0">
+  <project timestamp="1686652335587" name="All files">
     <metrics statements="39" coveredstatements="39" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="10" elements="51" coveredelements="51" complexity="0" loc="39" ncloc="39" packages="2" files="4" classes="4"/>
     <package name="src.DTO">
       <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
