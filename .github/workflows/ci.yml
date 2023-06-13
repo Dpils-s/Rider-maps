@@ -1,4 +1,4 @@
-name: SonarCloud Analysis
+name: Continuous Integration && SonarCloud
 
 on:
   push:
