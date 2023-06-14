@@ -1,6 +1,9 @@
-import { getAllAddresses } from '@/DAL/AddressListDAL'; // Import the getAllAddresses function
+import { getAllAddresses } from '@/DAL/AddressListDAL';
+import MainPage from "@/components/MainPage.vue";
+import MainLayout from "@/components/MainLayout.vue"; // Import the getAllAddresses function
 
 export default {
+    components: {MainLayout, MainPage},
     data() {
         return {
             addresses: [],

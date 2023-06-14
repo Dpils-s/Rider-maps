@@ -2,7 +2,6 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import { createRouter, createWebHistory } from 'vue-router'; // Updated import statement
 import CustomerAddress from "@/components/CustomerAddress.vue";
-import AddressList from "@/components/AddressList.vue";
 import RiderRoute from "@/components/RiderRoute.vue";
 import MainPage from "@/components/MainPage.vue";
 
@@ -14,7 +13,6 @@ const router = createRouter({
     routes: [
         { path: '/', component: MainPage },
         { path: '/address-selection', component: CustomerAddress },
-        { path: '/address-list', component: AddressList },
         { path: '/rider-route', component: RiderRoute },
     ],
 });

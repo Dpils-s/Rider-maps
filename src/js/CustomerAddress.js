@@ -114,21 +114,26 @@ function initMap() {
 }
 
 async function saveAddress() {
-    const place = position;
-    const description = document.getElementById('description').value;
+    if(position != null) {
 
-    try {
-        const response = await fetch('http://localhost:4080/places', {
-            method: 'POST',
-            body: JSON.stringify({ place, description }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-        await response.json();
-    } catch (error) {
-        console.error('Error:', error);
+        const place = position;
+        const description = document.getElementById('description').value;
+
+        try {
+            const response = await fetch('http://localhost:4080/places', {
+                method: 'POST',
+                body: JSON.stringify({place, description}),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            await response.json();
+            window.location.href = '/';
+        } catch (error) {
+            console.error('Error:', error);
+        }
     }
+    else console.error("You didn't specify place");
 }
 
 export { initMap, saveAddress };

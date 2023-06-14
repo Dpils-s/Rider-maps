@@ -1,4 +1,6 @@
 <template>
+  <main-layout>
+  </main-layout>
   <div class="card-container">
     <div class="panel">
       <div>
@@ -24,6 +26,7 @@
 import { onMounted } from 'vue';
 import { initMap, saveAddress } from '@/js/CustomerAddress';
 import '@/css/CustomerAddress.css';
+import MainLayout from "@/components/MainLayout.vue";
 
 onMounted(() => {
   initMap(); // Call the initMap function when the component is mounted
